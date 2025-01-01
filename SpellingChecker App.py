@@ -14,7 +14,7 @@ def chech_spelling():
     a= TextBlob(word)
     right = str(a.correct())
     
-    cs = Label(root,text = "Corret text is: ", font=("poppins", 20), bg= "#dae6f6", fg= "#364971")
+    cs = Label(root,text = "Corret spelling is: ", font=("poppins", 20), bg= "#dae6f6", fg= "#364971")
     cs.place(x=100, y= 250)
     spell.config(text=right)
     
