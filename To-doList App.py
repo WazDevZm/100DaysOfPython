@@ -1,6 +1,7 @@
 import tkinter
 from tkinter import *
 
+#This is Wazingwa's To -Do List app being made using Python from scratch
 box = Tk()
 box.title("My To-do App")
 box.geometry("400x650+400+100")
