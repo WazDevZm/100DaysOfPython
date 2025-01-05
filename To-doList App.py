@@ -1,4 +1,5 @@
 import tkinter
+import os
 from tkinter import *
 
 # This is Wazingwa's To-Do List app being made using Python from scratch
@@ -8,6 +9,23 @@ box.geometry("400x650+400+100")
 box.resizable(False, False)
 
 task_list = []
+import os
+
+file_path = os.path.join(os.path.dirname(__file__), "tasklist.txt")
+
+def openTaskFile():
+    if not os.path.exists(file_path):
+        with open(file_path, "w") as taskFile:
+            pass
+    with open(file_path, "r") as taskFile:
+        global task_list
+        task_list = [task.strip() for task in taskFile.readlines()]
+    #for task in tasks:
+        
+
+# Call the function
+openTaskFile()
+
 
 # Top bar
 heading = Label(box, text="All my tasks!", font="arial 20 bold", fg="black")
@@ -43,7 +61,7 @@ listbox.config(yscrollcommand=scrollbar.set)
 scrollbar.config(command=listbox.yview)
 
 
-
+openTaskFile()
 
 #deleteTask
 #Delete_icon = PhotoImage(file="Images/waz.png")
