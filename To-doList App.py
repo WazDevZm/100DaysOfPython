@@ -31,7 +31,15 @@ frame1 = Frame(box, bd=3, width=400, height=400, bg="#32405b")
 frame1.place(x=0, y=150)
 
 # Listbox
-listbox = Listbox(frame1, font=('arial', 12), width=40, height=20, bg="#32405b", fg="#fff")
-listbox.pack(side=LEFT, fill=BOTH)
+listbox = Listbox(frame1, font=('arial', 12), width=40, height=20, bg="#32405b", fg="white", cursor="hand2", selectbackground="#5a95ff")
+listbox.pack(side=LEFT, fill=BOTH, padx=2)
+
+
+scrollbar= Scrollbar(frame1)
+scrollbar.pack(side=RIGHT, fill=BOTH)
+
+
+listbox.config(yscrollcommand=scrollbar.set)
+scrollbar.config(command=listbox.yview)
 
 box.mainloop()
