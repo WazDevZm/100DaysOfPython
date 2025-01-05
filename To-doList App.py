@@ -42,4 +42,13 @@ scrollbar.pack(side=RIGHT, fill=BOTH)
 listbox.config(yscrollcommand=scrollbar.set)
 scrollbar.config(command=listbox.yview)
 
+
+
+
+#deleteTask
+#Delete_icon = PhotoImage(file="Images/waz.png")
+#Button(box, image=Delete_icon, bd=0).pack(side=BOTTOM, pady=13)
+button1 = Button(box, text="Delete", font="arial 20 bold",bg="red", fg="#fff", bd=0)
+button1.pack(side=BOTTOM, pady=13)
+
 box.mainloop()
