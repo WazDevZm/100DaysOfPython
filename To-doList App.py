@@ -9,23 +9,16 @@ box.geometry("400x650+400+100")
 box.resizable(False, False)
 
 task_list = []
-import os
 
-file_path = os.path.join(os.path.dirname(__file__), "tasklist.txt")
-
+#file handling in python lol
 def openTaskFile():
-    if not os.path.exists(file_path):
-        with open(file_path, "w") as taskFile:
-            pass
-    with open(file_path, "r") as taskFile:
-        global task_list
-        task_list = [task.strip() for task in taskFile.readlines()]
-    #for task in tasks:
+    with open("tasklist.txt", "r") as taskFile:
+        tasks = taskFile.readlines()
         
-
-# Call the function
-openTaskFile()
-
+    for task in tasks:
+        if task !='\n':
+            task_list.append(task)
+            listbox.insert(END, task)
 
 # Top bar
 heading = Label(box, text="All my tasks!", font="arial 20 bold", fg="black")
